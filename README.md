@@ -31,14 +31,18 @@ mysql ([quick ref](http://dev.mysql.com/doc/refman/5.7/en/mysql-command-options.
 
     $ docker run --rm \
       sami/mysql-client \
-      --host=example.com --user=root --password=12345 --database=test --execute='show tables;'
+      mysql --host=example.com --user=root --password=12345 --database=test --execute='show tables;'
 
 mysqldump ([quick ref](http://dev.mysql.com/doc/refman/5.7/en/mysqldump.html))
 
     docker run --rm \
               -v /tmp/exports:/data \
-              sami/mysql-client:mysqldump \
+              sami/mysql-client mysqldump \
               db_name --result-file=backup.sql
+
+More tools (see the list above)
+
+    docker run --rm sami/mysql-client <TOOL> --version
 
 ### Reference Manual
 
